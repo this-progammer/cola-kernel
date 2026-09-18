@@ -17,6 +17,10 @@ int get_kernel_current_state(struct kernel* k) {
     if( k->state == KERNEL_BOOTING ) {
         return KERNEL_BOOTING;
     }
-    
   return k->state;
+}
+
+void set_kernel_current_state(struct kernel* k, int S) {
+    *k->state = S;
+    get_kernel_current_state( k );
 }
